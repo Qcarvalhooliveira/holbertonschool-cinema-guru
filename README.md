@@ -1,3 +1,5 @@
+<img src="https://github.com/Qcarvalhooliveira/holbertonschool-cinema-guru/blob/main/image/cinema.png" width="1000" height="400">
+
 # **Implement an app with React** :computer:
 
 ## **Description:** :speech_balloon:
