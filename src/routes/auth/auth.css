@@ -1,0 +1,164 @@
+/* Container principal da autenticação */
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 450px;
+    height: 361px;
+    background-color: #FFFFFF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+.auth-header {
+    display: flex;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+/* Cabeçalho da autenticação com botões */
+.auth-header button {
+    width: 225px;
+    height: 48px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #BB000E;
+    color: white;
+}
+ .auth-container h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 217px;
+    height: 20px;
+    font-family: 'Roboto', 'regular';
+    font-weight: 300;
+    font-size: 19px;
+    color: #1C1C1C;
+ }
+
+
+/* Estilo para o botão ativo */
+.auth-header .active {
+    background-color: #E31C25;
+
+}
+
+/* Estilo para o botão inativo */
+.auth-header .inactive {
+    background-color: #BB000E;
+  
+}
+
+/* Formulário de autenticação */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    border: none;
+    background-color: #fff;
+}
+
+/* Estilos para os inputs */
+.auth-form input {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #BB000E;
+display: flex;
+color: gray;
+}
+
+/* Título do formulário */
+.auth-form h2 {
+    text-align: center;
+    color: blue;
+}
+
+/* Botões de autenticação */
+.auth-form button {
+    width: 104px;
+    height: 34px;
+    border: none;
+
+    font-size: 15px;
+    cursor: pointer;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    background-color: #BB000E;
+    color: white;
+    transition: background-color 0.3s;
+    margin-left: 165px;
+
+}
+
+/* Hover nos botões */
+.button:hover {
+    background-color: #E31C25;
+ 
+}
+
+/* Ícones nos botões */
+.button .fa-icon {
+    margin-right: 0.5rem;
+}
+
+/* Estilo customizado dos botões */
+.custom-button {
+    background-color: #E31C25;
+ 
+    
+}
+
+/* Hover nos botões customizados */
+.custom-button:hover {
+    background-color: #E31C25;
+}
+/* Wrapper para o input com ícone */
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.input-icon-wrapper {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #BB000E;
+    position: relative;
+    color: gray;
+}
+
+
+.input-icon-wrapper input {
+    padding-left: 30px; /* Ajuste o padding para acomodar o ícone */
+    padding-right: 10px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: gray;
+}
+
+.input-icon-wrapper input::placeholder {
+    color: gray; /* Cor do placeholder */
+}
+
+.input-icon-wrapper input:focus {
+    border-bottom: 2px solid #E31C25;
+}
