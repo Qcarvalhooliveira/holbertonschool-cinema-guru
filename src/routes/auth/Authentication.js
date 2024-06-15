@@ -33,7 +33,7 @@ const Authentication = ({ setIsLoggedIn, setUserUsername }) => {
                 </button>
             </div>
             {isSwitch ? (
-                <>
+                <div className='title'>
                     <h2>Sign in with your account</h2>
                     <Login
                         username={username}
@@ -42,9 +42,9 @@ const Authentication = ({ setIsLoggedIn, setUserUsername }) => {
                         setPassword={setPassword}
                         buttonLabel="Sign In"
                     />
-                </>
+                </div>
             ) : (
-                <>
+                <div className='title'>
                     <h2>Create a new account</h2>
                     <Register
                         username={username}
@@ -54,7 +54,7 @@ const Authentication = ({ setIsLoggedIn, setUserUsername }) => {
                         buttonLabel="Sign Up"
                         
                     />
-                </>
+                </div>
             )}
         </div>
     );
