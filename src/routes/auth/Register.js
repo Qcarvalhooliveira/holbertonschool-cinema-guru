@@ -2,11 +2,11 @@ import React from 'react';
 import './auth.css';
 import Input from '../../components/general/Input';
 import Button from '../../components/general/Button';
-import { faUser,  faKey } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faKey } from '@fortawesome/free-solid-svg-icons';
 
-const Register = ({ username, password, setUsername, setPassword, buttonLabel }) => {
+const Register = ({ username, password, setUsername, setPassword, buttonLabel, handleSubmit }) => {
     return (
-        <form className="auth-form">
+        <form className="auth-form" onSubmit={handleSubmit}>
             <Input
                 label=""
                 type="text"
@@ -27,7 +27,7 @@ const Register = ({ username, password, setUsername, setPassword, buttonLabel })
                 label={buttonLabel}
                 icon={faKey}
                 className="custom-button"
-                onClick={() => { /* Lógica de registro */ }}
+                type="submit"
             />
         </form>
     );

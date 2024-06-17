@@ -11,6 +11,7 @@ import { faUser, faCheck } from '@fortawesome/free-solid-svg-icons';
 import Authentication from './routes/auth/Authentication';
 
 
+
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [setUserUsername] = useState('');
@@ -43,7 +44,11 @@ function App() {
   };
 
   if (!isLoggedIn) {
-      return <Authentication />;
+      return (
+     
+      <Authentication />
+      
+      )
   }
 
   return (

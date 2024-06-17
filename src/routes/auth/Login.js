@@ -2,19 +2,18 @@ import React from 'react';
 import './auth.css';
 import Input from '../../components/general/Input';
 import Button from '../../components/general/Button';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { faKey } from '@fortawesome/free-solid-svg-icons/faKey';
+import { faUser, faKey } from '@fortawesome/free-solid-svg-icons';
 
-const Login = ({ username, password, setUsername, setPassword, buttonLabel }) => {
+const Login = ({ username, password, setUsername, setPassword, buttonLabel, handleSubmit }) => {
     return (
-        <form className="auth-form">
+        <form className="auth-form" onSubmit={handleSubmit}>
             <Input
                 label=""
                 type="text"
                 value={username}
                 setValue={setUsername}
                 icon={faUser}
-                inputAttributes={{ placeholder: 'Username:' }}
+                inputAttributes={{ placeholder: 'Username' }}
             />
             <Input
                 label=""
@@ -22,13 +21,13 @@ const Login = ({ username, password, setUsername, setPassword, buttonLabel }) =>
                 value={password}
                 setValue={setPassword}
                 icon={faKey}
-                inputAttributes={{ placeholder: 'Password:' }}
+                inputAttributes={{ placeholder: 'Password' }}
             />
             <Button
                 label={buttonLabel}
-                className="custom-button"
                 icon={faKey}
-                onClick={() => { /* Lógica de login */ }}
+                className="custom-button"
+                type="submit"
             />
         </form>
     );

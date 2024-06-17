@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './auth.css';
 import Login from './Login';
 import Register from './Register';
+import axios from 'axios';
 
 const Authentication = ({ setIsLoggedIn, setUserUsername }) => {
     const [isSwitch, setSwitch] = useState(true);
@@ -14,6 +15,22 @@ const Authentication = ({ setIsLoggedIn, setUserUsername }) => {
 
     const handleSignUpClick = () => {
         setSwitch(false);
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        try {
+            const url = isSwitch ? '/api/auth/login' : '/api/auth/register';
+            const response = await axios.post(url, { username, password });
+
+            const { accessToken } = response.data;
+            localStorage.setItem('accessToken', accessToken);
+            setUserUsername(username);
+            setIsLoggedIn(true);
+        } catch (error) {
+            console.error('Error during authentication', error);
+        }
     };
 
     return (
@@ -41,6 +58,7 @@ const Authentication = ({ setIsLoggedIn, setUserUsername }) => {
                         setUsername={setUsername}
                         setPassword={setPassword}
                         buttonLabel="Sign In"
+                        handleSubmit={handleSubmit}
                     />
                 </div>
             ) : (
@@ -52,7 +70,7 @@ const Authentication = ({ setIsLoggedIn, setUserUsername }) => {
                         setUsername={setUsername}
                         setPassword={setPassword}
                         buttonLabel="Sign Up"
-                        
+                        handleSubmit={handleSubmit}
                     />
                 </div>
             )}
